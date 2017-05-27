@@ -12,7 +12,7 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 3. Create a **LAP1** folder in the *Bootcamp* directory
 4. Open Visual Studio Code, and press **CTRL+K CTRL+O** and browse to the newly created *LAB1* folder (You may also use the *File* menu and select *Open Folder*)
 
-## Get Connected
+## Connect to Azure IoT Hub
 1. In order to connect to Azure we need to install a couple of NPM packages. From within VS Code hit Shift+CTRL+C to open a command prompt. Type:
 <pre>
 <b>npm install azure-iot-device azure-iot-device-mqtt</b> 
@@ -48,3 +48,19 @@ If you have closed the command/terminal window, hit Shift+CTRL+C again to open a
 <pre>
 <b>node app.js</b> 
 </pre>
+
+Close the console/terminal using **CTRL+C**.
+
+#### Optional
+You can run the application from within VS Code by hitting **F5**.
+
+## Get temperature readings
+1. Now you’re ready to start receiving sensor data from the TI sensor. Let’s start importing the npm package. Go back to the console and type:
+<pre>
+<b>npm install sensortag</b> 
+</pre>
+2. Back in VS Code, at the top, create a reference to the newly imported package:
+```js
+var SensorTag = require('sensortag');
+```
+3. 
