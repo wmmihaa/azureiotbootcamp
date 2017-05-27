@@ -11,3 +11,16 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 2. Download **[PSCP](http://microservicebus.blob.core.windows.net/img/pscp.exe)** to the Bootcamp directory (**Only if you're on a Windows laptop**)
 3. Create a **LAP1** folder in the *Bootcamp* directory
 4. Open Visual Studio Code, and press **CTRL+K CTRL+O** and browse to the newly created *LAB1* folder (You may also use the *File* menu and select *Open Folder*)
+
+## Develop Device Agent
+1. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **app.js**
+2. Next, let's declare the objects you're going to use:
+
+```js
+var SensorTag = require('sensortag'); // TI Sensor used to interact with the temperature sensor
+
+var Message = require('azure-iot-device').Message; 
+var Protocol = require('azure-iot-device-mqtt').Mqtt;
+var connectionString = '[THE DEVICE CONNECTIONSTRING 
+```
+
