@@ -16,3 +16,5 @@ In this step, you’re first going to register a device in the Azure IoT Hub. To
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_2.png"/>
 
 ** DONE! You are now ready to start with Lab 1.**
+
+**[BACK TO FIRST PAGE](https://github.com/wmmihaa/azureiotbootcamp/blob/master/README.md)**
