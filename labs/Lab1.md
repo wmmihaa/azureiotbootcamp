@@ -14,13 +14,17 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 
 ## Develop Device Agent
 1. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **app.js**
-2. Next, let's declare the objects you're going to use:
+2. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
 var SensorTag = require('sensortag'); // TI Sensor used to interact with the temperature sensor
 
 var Message = require('azure-iot-device').Message; 
-var Protocol = require('azure-iot-device-mqtt').Mqtt;
-var connectionString = '[THE DEVICE CONNECTIONSTRING 
+var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
+var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]'
 ```
 
+3. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
+```js
+var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
+```
