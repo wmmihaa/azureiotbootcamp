@@ -12,28 +12,27 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 3. Create a **LAP1** folder in the *Bootcamp* directory
 4. Open Visual Studio Code, and press **CTRL+K CTRL+O** and browse to the newly created *LAB1* folder (You may also use the *File* menu and select *Open Folder*)
 
-## Develop Device Agent
-```
-While we're developing we're going to reference several NPM packages. 
-However, we're not going to download these until we've deployed the solution to the Device 
-```
-1. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **app.js**
-2. Next, let's declare some of the objects and variables you're going to use:
+## Get Connected
+1. In order to connect to Azure we need to install a couple of NPM packages. From within VS Code hit Shift+CTRL+C to open a command prompt. Type:
+<pre>
+<b>npm install azure-iot-device azure-iot-device-mqtt</b> 
+</pre>
+
+2. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **app.js**
+3. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
-var SensorTag = require('sensortag'); // TI Sensor used to interact with the temperature sensor
-
 var Message = require('azure-iot-device').Message; 
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
 var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]'
 ```
 
-3. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
+4. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
 ```js
 var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
 ```
 
-4. Using the **open** function on the *client* will connect us to the IoT Hub:
+5. Using the **open** function on the *client* will connect us to the IoT Hub:
 ```js
 client.open(function (err) {
     if (err) {
@@ -44,3 +43,8 @@ client.open(function (err) {
     }
 });
 ```
+### Try it out
+If you have closed the command/terminal window, hit Shift+CTRL+C again to open a new one. To start your application, type:
+<pre>
+<b>node app.js</b> 
+</pre>
