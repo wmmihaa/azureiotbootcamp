@@ -34,3 +34,6 @@ The TI Sensor tag is a Bluetooth connected sensor. – In fact, it’s 10 sensor
 * Optical light intensity (LUX)
 
 Your TI Sensor has been paird with your Raspberry PI.
+
+## Set up your IoT Hub and register your device
+Before you get started with any of the labs, go through [these](https://github.com/wmmihaa/azureiotbootcamp/blob/master/CreateIoTHub.md) instructions to set up your Azure IoT hub. 
