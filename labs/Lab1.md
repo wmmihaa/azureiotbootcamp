@@ -24,7 +24,7 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 ```js
 var Message = require('azure-iot-device').Message; 
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
-var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]'
+var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]';
 ```
 
 4. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
@@ -55,11 +55,10 @@ Close the console/terminal using **CTRL+C**.
 You can run the application from within VS Code by hitting **F5**.
 
 ## Get temperature readings
-1. Now you’re ready to start receiving sensor data from the TI sensor. Let’s start importing the npm package. Go back to the console and type:
+1. Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package:
 <pre>
-<b>npm install sensortag</b> 
+<b>Please note that we are not installing the package yet, as it won't run on your laptop anyway...</b> 
 </pre>
-2. Back in VS Code, at the top, create a reference to the newly imported package:
 ```js
 var SensorTag = require('sensortag');
 ```
