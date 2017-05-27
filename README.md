@@ -17,4 +17,20 @@ In the invitation to the IoT Bootcamp you were instructed to come prepared with 
 * Azure konto
 * Power BI konto
 
-If you didn't have time to prepare, no worries, just follow the instructions from [here]8https://github.com/wmmihaa/azureiotbootcamp/blob/master/Prerequisites.md)
+If you didn't have time to prepare, no worries, just follow the instructions from [here](https://github.com/wmmihaa/azureiotbootcamp/blob/master/Prerequisites.md)
+
+## Your Devices
+Throughout this Bootcamp you’re going to be using a Raspberry PI 3 model B together with a TI sensor tag from Texas Instrument. 
+
+The Raspberry PI has been preinstalled with Raspian OS and Node.Js. It has also been provided a unique name and connected to the WiFi. Connection information should be found in the box. The Raspberry PI is going to play the role of your device.
+
+The TI Sensor tag is a Bluetooth connected sensor. – In fact, it’s 10 sensors:
+* Temperature
+* Accelerometer
+* Gyroscope
+* Magnetometer
+* Humidity (relative humidity and temperature)
+* Barometer (pressure and temperature)
+* Optical light intensity (LUX)
+
+Your TI Sensor has been paird with your Raspberry PI.
