@@ -23,8 +23,10 @@ Browse to https://nodejs.org and download and install the latest version of Node
 
 PuTTY is open source SSH and telnet client that you will use to access the SSH console of your Raspberry PI. You can download PuTTY from [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-* Visual Studio Code
-* Node.js
-* Putty
-* Azure account
-* Power BI account
+### Microsoft Azure Account <img src="https://microservicebus.blob.core.windows.net/img/azurelogo.png" alt="AzureAccount"/>
+
+You'll need an Azure Account to create your Azure ioT hub. Signing up will giv you a $200 free credit, which should be plenty for now. Sign up [here](https://azure.microsoft.com/en-us/free/).
+
+### Microsoft Power BI Account <img src="https://microservicebus.blob.core.windows.net/img/BI Product.png" alt="AzureAccount"/>
+
+Power BI is a suite of business analytics tools that deliver valuable business insights. You might already have an O365 account, so make sure to log in and check first. If you don't - No sweat, just create one from [here](https://powerbi.microsoft.com/en-us/).
