@@ -108,3 +108,47 @@ setUpSensor( function (err, sensorTag) {
     }
 });
 ```
+### Try it out
+#### Prepare the Device
+1. Unpack the Raspberry PI and attach the USB power cord. The device is pre-configured to connect to the network. 
+2. Open PuTTY and connect using the settings given to you.
+3. After successfully logged in to the Device, type: 
+```
+cd IOTBOOTCAMP
+```
+This will be the folder where you are going to store all labs. **PLEASE DO NOT USE ANY OTHER FOLDER, AS THE DEVICE IS GOING TO BE RESET FOR THE NEXT BOOTCAMP**
+
+4. Create a new folder called “LAB1” by typing:
+```
+mkdir LAB1
+```
+5. Import NPM packages by typing:
+```
+npm install azure-iot-device azure-iot-device-mqtt sensortag
+```
+
+#### Deploy your solution
+
+1. Back on your laptop, open a new command/terminal window, hit **Shift+CTRL+C** if you don’t have one open. Make sure you are in the Bootcamp directory (eg. *C:\IOTBOOTCAMP*), where you saved the **PSCP.exe** file.
+2. Type the following command to deploy your code to the **LAB1** directory on the Device;
+```
+pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LAB1\app.js root@raspberrypi3:/root/IOTBOOTCAMP/LAB1
+```
+Make sure to update the path if you’re using a different directory.
+
+#### Run the application
+1. On the right side of the TI Sensor (with the logo facing you) you’ll find a power switch button. Press the button to turn on the sensor tag.
+2. Go back to PuTTY and make sure you’re in the LAB1 folder.
+3. Start the agent by typing:
+```
+node app.js
+```
+If all goes well you should read something like:
+<pre>
+<b>root@YOURDEVICE:~/IOTBOOTCAMP# node app.js</b>
+<b>Successfully connected to the IoT Hub</b>
+<b>        Sensor tag found... </b>
+<b>        Successfully connected to TI sensor tag</b>
+</pre>
+
+**Congratulation! You’re now ready to start sending data**
