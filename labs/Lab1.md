@@ -70,7 +70,7 @@ Setting up the sensor is done in three steps:
 For more detailed information about the TI Sensor tag browse to [NPM page](https://www.npmjs.com/package/sensortag).
 
 To simplify these steps add the function below att the bottom of the **app.js** file:
-````js
+```js
 function setUpSensor(done) {
     // Find the Sensor Tag
     SensorTag.discover(function (sensorTag) {
@@ -95,4 +95,15 @@ function setUpSensor(done) {
         }
     });
 }
-````
+```
+This function will return a callback with the sensorTag object together with any errors. Call the setUpSensor function directly after you have successfully connected to the IoT Hub:
+```js
+setUpSensor( function (err, sensorTag) {
+    if (err) {
+        console.error('Could not connect to sensor: ' + err.message);
+    }
+    else {
+        console.log('\tSuccessfully connected to TI sensor tag');
+    }
+});
+```
