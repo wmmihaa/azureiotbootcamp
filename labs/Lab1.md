@@ -22,7 +22,7 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 3. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
-var Message = require('azure-iot-device').Message; 
+var Message = require('azure-iot-device').Message; // Used for wrapping the sensor readings befor sending it to the IoT Hub
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
 var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]';
 ```
@@ -153,3 +153,71 @@ If all goes well you should read something like:
 </pre>
 
 **Congratulation! You’re now ready to start sending data**
+
+### Read temperatures
+
+In this step you will write code to read the temperature sensor on an every second interval. Setting up an interval using JavaScript is very easy using the **setInterval** function. The *setInterval* function takes two parameters; a callback function (where we call the sensor)  and the interval (in ms) of how often we like it to trigger. Eg:
+```
+setInterval(function () {
+    // DO SOMETHING
+}, 1000);
+```
+1. Directly after the line where you’re successfully connected to the TI Sensor, type:
+```
+setInterval(function () {
+    sensorTag.readIrTemperature(function (error, objectTemperature, ambientTemperature) {
+        if (err) {
+            console.log('Unable to read sensor data:' + error);
+        }
+        else {
+            console.log('\tObject Temperature: ' + objectTemperature);
+            console.log('\tAmbient Temperature: ' + ambientTemperature);
+            // Add code to submit the temperature to the ioT Hub
+        }
+    });
+}, 2000);
+```
+
+#### Try it out (Optional)
+
+Feel free to save your work and deploy it to the Device. You should get your temperatures printed out every second on the screen. 
+<pre>
+<b>If the sensor doesn’t connect, you’ll need to push the power button again</b>
+</pre>
+
+### Submit readings to IoT Hub
+
+Wow, you’re getting close. All that is left to do is to actually submit the readings using the **sendEvent** function on the **client** object. The *sendEvent* function takes two parameters; message and callback. 
+
+The message is a Azure IoT object that we’re going to wrap our sensor readings with. But first let’s create a JavaScript object with the data we want to send. Directly after you’ve received the temperatures, create an object called **readings**
+```
+var readings = {
+    objectTemperature: objectTemperature,
+    ambientTemperature: ambientTemperature,
+    timeStamp: new Date(),
+};
+```
+Next, create an IoT message by serializing the *readings* object:
+```
+var json = JSON.stringify(readings); 
+var message = new Message(json);
+```
+Last step… send the message to the IoT Hub:
+```
+client.sendEvent(message, function(err){
+    if (err) {
+        console.log("Unable to send message. Error:" + err);
+    }
+    else{
+        console.log('\tSuccessfully Submitted readings to the IoT hub');
+        console.log();
+    }
+});
+```
+
+#### Try it out
+
+Deploy the solution to the Device. You should get your temperatures printed out every second on the screen. 
+<pre>
+<b>If the sensor doesn’t connect, you’ll need to push the power button again</b>
+</pre>

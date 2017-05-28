@@ -11,7 +11,7 @@ client.open(function (err) {
     }
     else {
         console.log('Successfully connected to the IoT Hub');
-        setUpSensor( function (err, sensorTag) {
+        setUpSensor(function (err, sensorTag) {
             if (err) {
                 console.error('Could not connect to sensor: ' + err.message);
             }
@@ -20,9 +20,32 @@ client.open(function (err) {
 
                 setInterval(function () {
                     sensorTag.readIrTemperature(function (error, objectTemperature, ambientTemperature) {
-                        console.log('error: ' + error);
-                        console.log('objectTemperature: ' + objectTemperature);
-                        console.log('ambientTemperature: ' + ambientTemperature);
+                        if (err) {
+                            console.log('Unable to read sensor data:' + error);
+                        }
+                        else {
+                            console.log('\tObject Temperature: ' + objectTemperature);
+                            console.log('\tAmbient Temperature: ' + ambientTemperature);
+
+                            var readings = {
+                                objectTemperature: objectTemperature,
+                                ambientTemperature: ambientTemperature,
+                                timeStamp: new Date(),
+                            };
+
+                            var json = JSON.stringify(readings);
+                            var message = new Message(json);
+
+                            client.sendEvent(message, function (err) {
+                                if (err) {
+                                    console.log("Unable to send message. Error:" + err);
+                                }
+                                else {
+                                    console.log('\tSuccessfully Submitted readings to the IoT hub');
+                                    console.log();
+                                }
+                            });
+                        }
                     });
                 }, 2000);
             }
