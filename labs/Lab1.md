@@ -68,6 +68,7 @@ Setting up the sensor is done in three steps:
 1. Discover the Sensor Tag
 2. Connect the the Sensor Tag
 3. Enable sensor (IR temperature in our case)
+
 For more detailed information about the TI Sensor tag browse to [NPM page](https://www.npmjs.com/package/sensortag).
 
 To simplify these steps add the function below att the bottom of the **app.js** file:
@@ -132,9 +133,9 @@ npm install azure-iot-device azure-iot-device-mqtt sensortag
 1. Back on your laptop, open a new command/terminal window, hit **Shift+CTRL+C** if you don’t have one open. Make sure you are in the Bootcamp directory (eg. *C:\IOTBOOTCAMP*), where you saved the **PSCP.exe** file.
 2. Type the following command to deploy your code to the **LAB1** directory on the Device;
 ```
-pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LAB1\app.js root@raspberrypi3:/root/IOTBOOTCAMP/LAB1
+pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LAB1\app.js root@**[YOURDEVICE]**:/root/IOTBOOTCAMP/LAB1
 ```
-Make sure to update the path if you’re using a different directory.
+Change *[YOURDEVICE]* to the name of your Device. Make sure to update the path if you’re using a different directory.
 
 #### Run the application
 1. On the right side of the TI Sensor (with the logo facing you) you’ll find a power switch button. Press the button to turn on the sensor tag.
