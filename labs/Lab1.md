@@ -221,3 +221,10 @@ Deploy the solution to the Device. You should get your temperatures printed out 
 <pre>
 <b>If the sensor doesn’t connect, you’ll need to push the power button again</b>
 </pre>
+
+### **WELL DONE!** 
+### Now lets move on to use the data...
+
+## Create an Azure Stream Analytics Job
+
+
