@@ -56,12 +56,13 @@ You can run the application from within VS Code by hitting **F5**.
 
 ## Get temperature readings
 Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package:
-<pre>
-<b>Please note that we are not installing the package yet, as it won't run on your laptop anyway...</b> 
-</pre>
 ```js
 var SensorTag = require('sensortag');
 ```
+<pre>
+<b>Please note that we are not installing the package yet, as it won't run on your laptop anyway...</b> 
+</pre>
+
 
 Setting up the sensor is done in three steps:
 1. Discover the Sensor Tag
