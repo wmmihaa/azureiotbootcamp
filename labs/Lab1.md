@@ -55,11 +55,44 @@ Close the console/terminal using **CTRL+C**.
 You can run the application from within VS Code by hitting **F5**.
 
 ## Get temperature readings
-1. Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package:
+Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package:
 <pre>
 <b>Please note that we are not installing the package yet, as it won't run on your laptop anyway...</b> 
 </pre>
 ```js
 var SensorTag = require('sensortag');
 ```
-3. 
+
+Setting up the sensor is done in three steps:
+1. Discover the Sensor Tag
+2. Connect the the Sensor Tag
+3. Enable sensor (IR temperature in our case)
+For more detailed information about the TI Sensor tag browse to [NPM page](https://www.npmjs.com/package/sensortag).
+
+To simplify these steps add the function below att the bottom of the **app.js** file:
+````js
+function setUpSensor(done) {
+    // Find the Sensor Tag
+    SensorTag.discover(function (sensorTag) {
+        if (!sensorTag) {
+            console.error('Could not find TI Sensor');
+            done(err, null);
+        }
+        else {
+            console.log('\tSensor tag found...');
+            // Connect the Sensor Tag
+            sensorTag.connectAndSetUp(function (err) {
+                if (err) {
+                    done(err, null);
+                }
+                else {
+                    // Enable the temperature sensor 
+                    sensorTag.enableIrTemperature(function (err) {
+                        done(err, sensorTag);
+                    });
+                }
+            });
+        }
+    });
+}
+````
