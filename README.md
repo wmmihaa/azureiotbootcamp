@@ -38,4 +38,5 @@ Your TI Sensor has been paird with your Raspberry PI.
 ## Set up your IoT Hub and register your device
 Before you get started with any of the labs, go through [these](https://github.com/wmmihaa/azureiotbootcamp/blob/master/CreateIoTHub.md) instructions to set up your Azure IoT hub. 
 
-## [LAB 1 - Submitting telemetry data to the cloud](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
+## LABS
+### [LAB 1 - Submitting telemetry data to the cloud](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
