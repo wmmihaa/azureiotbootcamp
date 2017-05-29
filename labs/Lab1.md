@@ -274,6 +274,11 @@ The whole idea with an IoT Bootcamp is to learn and get comfortable with the tec
 ### Change the payload
 So far you have only been using temperatures, but the TI sensor tag has many other sensors. Visit the [sensortag NPM page]( https://www.npmjs.com/package/sensortag) and go bananas…
 
+#### Tip
+<pre>
+<b>Update the setUpSensor function to enable other sensors</b>
+</pre>
+
 ### Store your data in the cloud
 
 Live streaming data to reports is all fine and dandy. But in many cases we’d like to persist the data for later analysis.  [Cosmo DB]( https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) (previously known as Document DB) is a document database in Azure. Create a new database and update the Stream Analytics Job to push your sensor readings to the Cosmos collection. You can query the collection right from the Azure portal.
