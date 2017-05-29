@@ -9,8 +9,8 @@ In this lab you’re going to develop a device agent to receive temperature data
 You are going to develop the Agent using JavaScript on your laptop using Visual Studio Code. When you’re done, you will deploy the Agent to the Device using PSCP.
 1. Create a Bootcamp directory on your laptop Eg. *C:\IOTBOOTCAMP*. 
 2. Download **[PSCP](http://microservicebus.blob.core.windows.net/img/pscp.exe)** to the Bootcamp directory (**Only if you're on a Windows laptop**)
-3. Create a **LAP1** folder in the *Bootcamp* directory
-4. Open Visual Studio Code, and press **CTRL+K CTRL+O** and browse to the newly created *LAB1* folder (You may also use the *File* menu and select *Open Folder*)
+3. Create a **LABS** folder in the *Bootcamp* directory
+4. Open Visual Studio Code, and press **CTRL+K CTRL+O** and browse to the newly created *LABS* folder (You may also use the *File* menu and select *Open Folder*)
 
 ## Connect to Azure IoT Hub
 1. In order to connect to Azure we need to install a couple of NPM packages. From within VS Code hit Shift+CTRL+C to open a command prompt. Type:
@@ -18,7 +18,7 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 <b>npm install azure-iot-device azure-iot-device-mqtt</b> 
 </pre>
 
-2. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **app.js**
+2. From within Visual Studio Code hit *CTRL+N* to create a new file. Name the file **lab1.js**
 3. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
@@ -46,7 +46,7 @@ client.open(function (err) {
 ### Try it out
 If you have closed the command/terminal window, hit Shift+CTRL+C again to open a new one. To start your application, type:
 <pre>
-<b>node app.js</b> 
+<b>node lab1.js</b> 
 </pre>
 
 Close the console/terminal using **CTRL+C**.
@@ -71,7 +71,7 @@ Setting up the sensor is done in three steps:
 
 For more detailed information about the TI Sensor tag browse to [NPM page](https://www.npmjs.com/package/sensortag).
 
-To simplify these steps add the function below att the bottom of the **app.js** file:
+To simplify these steps add the function below att the bottom of the **lab1.js** file:
 ```js
 function setUpSensor(done) {
     // Find the Sensor Tag
@@ -119,9 +119,9 @@ cd IOTBOOTCAMP
 ```
 This will be the folder where you are going to store all labs. **PLEASE DO NOT USE ANY OTHER FOLDER, AS THE DEVICE IS GOING TO BE RESET FOR THE NEXT BOOTCAMP**
 
-4. Create a new folder called “LAB1” by typing:
+4. Create a new folder called “LABS” by typing:
 ```
-mkdir LAB1
+mkdir LABS
 ```
 5. Import NPM packages by typing:
 ```
@@ -131,22 +131,22 @@ npm install azure-iot-device azure-iot-device-mqtt sensortag
 #### Deploy your solution
 
 1. Back on your laptop, open a new command/terminal window, hit **Shift+CTRL+C** if you don’t have one open. Make sure you are in the Bootcamp directory (eg. *C:\IOTBOOTCAMP*), where you saved the **PSCP.exe** file.
-2. Type the following command to deploy your code to the **LAB1** directory on the Device;
+2. Type the following command to deploy your code to the **LABS** directory on the Device;
 ```
-pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LAB1\app.js root@**[YOURDEVICE]**:/root/IOTBOOTCAMP/LAB1
+pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LABS\lab1.js root@**[YOURDEVICE]**:/root/IOTBOOTCAMP/LABS
 ```
 Change *[YOURDEVICE]* to the name of your Device. Make sure to update the path if you’re using a different directory.
 
 #### Run the application
 1. On the right side of the TI Sensor (with the logo facing you) you’ll find a power switch button. Press the button to turn on the sensor tag.
-2. Go back to PuTTY and make sure you’re in the LAB1 folder.
+2. Go back to PuTTY and make sure you’re in the LABS folder.
 3. Start the agent by typing:
 ```
-node app.js
+node lab1.js
 ```
 If all goes well you should read something like:
 <pre>
-<b>root@YOURDEVICE:~/IOTBOOTCAMP# node app.js</b>
+<b>root@YOURDEVICE:~/IOTBOOTCAMP# node lab1.js</b>
 <b>Successfully connected to the IoT Hub</b>
 <b>        Sensor tag found... </b>
 <b>        Successfully connected to TI sensor tag</b>
