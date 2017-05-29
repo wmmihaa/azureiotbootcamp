@@ -143,11 +143,11 @@ Change *[YOURDEVICE]* to the name of your Device. Make sure to update the path i
 2. Go back to PuTTY and make sure you’re in the LABS folder.
 3. Start the agent by typing:
 ```
-node lab1.js
+sudo node lab1.js
 ```
 If all goes well you should read something like:
 <pre>
-<b>root@YOURDEVICE:~/IOTBOOTCAMP# node lab1.js</b>
+<b>root@YOURDEVICE:~/IOTBOOTCAMP# sudo node lab1.js</b>
 <b>Successfully connected to the IoT Hub</b>
 <b>        Sensor tag found... </b>
 <b>        Successfully connected to TI sensor tag</b>
