@@ -267,7 +267,7 @@ You’re are finally ready to create your stunning report.
 If you stopped your Device Agent, fire it up again. After 5-10 seconds you should see data presented on your power BI Dashboard.
 
 
-#### GET CREATIVE 
+## GET CREATIVE 
 
 The whole idea with an IoT Bootcamp is to learn and get comfortable with the technology. Before you move on to the next lab, make your own changes and play around. Here are a few ideas you might consider:
 
