@@ -227,4 +227,38 @@ Deploy the solution to the Device. You should get your temperatures printed out 
 
 ## Create an Azure Stream Analytics Job
 
+Stream Analytics makes it easy to set up real-time analytic computations on data streaming from devices, sensors, web sites, social media, applications, infrastructure systems, and more.
+Setting up a Stream Analytics job is simple, and can be done in three steps; Define Input, output and query
+
+### Create job
+
+1.	Back in the Azure Portal, Click New and type “stream” and click the “Stream Analytics job” option from the drop-down.
+2.	Give the job a name, such as ProcessingTelemetryData, select the subscription and choose the same Resource Group as with the IoT Hub (only for convenience when cleaning up). Click Create.
+3.	Open the job after it has been successfully deployed.
+4.	Click on Inputs
+
+<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_4.png"/>
+
+5.	Click Add, and give it a name (such as “temperatures”) and select IoT Hub as your Source:
+
+<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_5.png"/>
+
+6.	Click Create, and navigate back to your Stream Analytics job. – Click Outputs
+7.	Click Add and give it a name such as “powerbi”, set the sink to Power BI. Click Authorize and log in with your Office 365 account. 
+If you have never used Power BI, you’ll have to enable your account by signing up. If you don’t have an O365 Account, let the trainer know and we’ll be creative 😉
+8.	Set the Dataset- and Table  Name to Temperatures 
+9.	Again, click Create, and navigate back to your Stream Analytics job. – Click Query
+10.	Change YourOutputAlias to powerbi and YourInputAlias to temperatures
+11.	Click Save, and go back to the job and Click Start
+
+### Create the report
+You’re are finally ready to create your stunning report.
+
+1.	Open a browser (if you’re are using a different account for Power BI, open up a new Incognito window) and navigate to http://powerbi.com and sign in with your O365 account.
+2.	Click Streaming datasets and notice the temperatures data source. If it’s not there, make sure your device agent is running, or at least give it a minute or two. If it’s still not showing up, check the Steam Analytics Job for any errors
+3.	Navigate to your Dashboard, and click Add tile in the upper-right corner.
+4.	Select CUSTOM STREAMING DATA and click Next
+5.	Select the Temperatures dataset and click Next
+6.	Set the Visualization Type to Line chart, Axis to timestamp and set Values to temperature.
+7.	Continue to give your tile a good name and subtitle.
 
