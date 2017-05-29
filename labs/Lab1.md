@@ -122,6 +122,7 @@ This will be the folder where you are going to store all labs. **PLEASE DO NOT U
 4. Create a new folder called “LABS” by typing:
 ```
 mkdir LABS
+cd LABS
 ```
 5. Import NPM packages by typing:
 ```
@@ -133,7 +134,7 @@ npm install azure-iot-device azure-iot-device-mqtt sensortag
 1. Back on your laptop, open a new command/terminal window, hit **Shift+CTRL+C** if you don’t have one open. Make sure you are in the Bootcamp directory (eg. *C:\IOTBOOTCAMP*), where you saved the **PSCP.exe** file.
 2. Type the following command to deploy your code to the **LABS** directory on the Device;
 ```
-pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LABS\lab1.js root@**[YOURDEVICE]**:/root/IOTBOOTCAMP/LABS
+pscp -pw AzureIoT -r C:\IOTBOOTCAMP\LABS\lab1.js pi@**[YOURDEVICE]**:/home/pi/IOTBOOTCAMP/LABS
 ```
 Change *[YOURDEVICE]* to the name of your Device. Make sure to update the path if you’re using a different directory.
 

@@ -1,4 +1,4 @@
-# LAB 1 - Pushing telemetry data to Power BI
+# LAB 2 - Sending noticications from IoT Hub to Device
 
 ## Description
 In the previous lab your Device (Raspberry PI) played the role of the temperature gateway. The Bluetooth sensor has a 50-60m range, and we can imagen several sensors paired with the same gateway. In this lab you’re going to add another device playing the role of the air condition or thermostat. For this device, you are going to be using your laptop. 
@@ -106,7 +106,22 @@ You should now have a "clean" IoT agent with nothing but connecting to the IoT H
 
 Add the follwoing code just after you successfully connected to the IoT Hub.
 
+```js
+client.on('message', function (msg) {
+    console.log('Received Command: WARNING');
+    console.log(JSON.stringify(msg));
+});
+```
+
+#### Try it out
+
+1. On your laptop. open a new console (CTTRL+Shift+C from VS Code). and type:
+```
+node lab2.js
+```
+
+2. If you stopped your Raspberry PI Device, fire it up again. 
+3. Cover the TI sensor with your hand to change the temperature. If the temperature exceeds the threshold a warning message should get received on your laptop device.
 
 
-
-
+ 
