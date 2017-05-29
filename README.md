@@ -3,7 +3,7 @@
 This Bootcamp will help you discover how Azure IoT and related services such as Azure Stream Analytics, Azure Functions and Microsoft Power BI. This immersive workshop will guide you to better understand how to build real-world IoT solutions.
 
 ## How it works
-You’ll be given an introduction to Azure IoT and related services you will be working with throughout the workshop. Since some of the labs are using Node.js you’ll be given a short overview of Node.js and JavaScript. From this point forward you are on your own building the labs. But don’t worry, we are here to help you along should you need assistance.
+You’ll be given an introduction to Azure IoT and related services you will be working with throughout the workshop. Since some of the labs are using Node.js you’ll be given a short overview of Node.js and JavaScript. From this point forward you are on your own building the labs. But don’t worry, we are here to help you along if you need assistance.
 
 **Also, you are free to team up with other attendees. – It’s not a competition, we are all there to learn.**
 
@@ -33,7 +33,7 @@ The TI Sensor tag is a Bluetooth connected sensor. – In fact, it’s 10 sensor
 * Barometer (pressure and temperature)
 * Optical light intensity (LUX)
 
-Your TI Sensor has been paird with your Raspberry PI.
+Your TI Sensor has been paired with your Raspberry PI.
 
 ## Set up your IoT Hub and register your device
 Before you get started with any of the labs, go through [these](https://github.com/wmmihaa/azureiotbootcamp/blob/master/CreateIoTHub.md) instructions to set up your Azure IoT hub. 

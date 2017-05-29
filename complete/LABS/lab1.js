@@ -1,7 +1,7 @@
 var SensorTag = require('sensortag');
 var Message = require('azure-iot-device').Message;
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
-var connectionString = 'HostName=d-rail-AzureIotHub.azure-devices.net;DeviceId=device1;SharedAccessKey=DZ9pqDKyqRcFD61iQioN+XjJr1LanDRLmfb4fzIXmYM=';
+var connectionString = '...';
 
 var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
 
