@@ -232,24 +232,24 @@ Setting up a Stream Analytics job is simple, and can be done in three steps; Def
 
 ### Create job
 
-1.	Back in the Azure Portal, Click New and type “stream” and click the “Stream Analytics job” option from the drop-down.
-2.	Give the job a name, such as ProcessingTelemetryData, select the subscription and choose the same Resource Group as with the IoT Hub (only for convenience when cleaning up). Click Create.
+1.	Back in the Azure Portal, Click **New** and type “stream” and click the “Stream Analytics job” option from the drop-down.
+2.	Give the job a name, such as "ProcessingTelemetryData", select the subscription and choose the same *Resource Group* as with the IoT Hub (only for convenience when cleaning up). Click **Create**.
 3.	Open the job after it has been successfully deployed.
 4.	Click on Inputs
 
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_4.png"/>
 
-5.	Click Add, and give it a name (such as “temperatures”) and select IoT Hub as your Source:
+5.	Click **Add**, and give it a name (such as “temperatures”) and select IoT Hub as your Source:
 
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_5.png"/>
 
-6.	Click Create, and navigate back to your Stream Analytics job. – Click Outputs
-7.	Click Add and give it a name such as “powerbi”, set the sink to Power BI. Click Authorize and log in with your Office 365 account. 
+6.	Click **Create**, and navigate back to your Stream Analytics job. – Click **Outputs**.
+7.	Click **Add** and give it a name such as “powerbi”, set the sink to *Power BI*. Click Authorize and log in with your Office 365 account. 
 If you have never used Power BI, you’ll have to enable your account by signing up. If you don’t have an O365 Account, let the trainer know and we’ll be creative 😉
-8.	Set the Dataset- and Table  Name to Temperatures 
-9.	Again, click Create, and navigate back to your Stream Analytics job. – Click Query
-10.	Change YourOutputAlias to powerbi and YourInputAlias to temperatures
-11.	Click Save, and go back to the job and Click Start
+8.	Set the Dataset- and Table Name to Temperatures 
+9.	Again, click **Create**, and navigate back to your Stream Analytics job. – Click **Query**.
+10.	Change *[YourOutputAlias]* to **powerbi** and *[YourInputAlias]* to **temperatures**
+11.	Click **Save**, and go back to the job and Click **Start**.
 
 ### Create the report
 You’re are finally ready to create your stunning report.
@@ -262,3 +262,18 @@ You’re are finally ready to create your stunning report.
 6.	Set the Visualization Type to Line chart, Axis to timestamp and set Values to temperature.
 7.	Continue to give your tile a good name and subtitle.
 
+#### Try it out
+
+If you stopped your Device Agent, fire it up again. After 5-10 seconds you should see data presented on your power BI Dashboard.
+
+
+#### GET CREATIVE 
+
+The whole idea with an IoT Bootcamp is to learn and get comfortable with the technology. Before you move on to the next lab, make your own changes and play around. Here are a few ideas you might consider:
+
+### Change the payload
+So far you have only been using temperatures, but the TI sensor tag has many other sensors. Visit the [sensortag NPM page]( https://www.npmjs.com/package/sensortag) and go bananas…
+
+### Store your data in the cloud
+
+Live streaming data to reports is all fine and dandy. But in many cases we’d like to persist the data for later analysis.  [Cosmo DB]( https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) (previously known as Document DB) is a document database in Azure. Create a new database and update the Stream Analytics Job to push your sensor readings to the Cosmos collection. You can query the collection right from the Azure portal.
