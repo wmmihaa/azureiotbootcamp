@@ -41,4 +41,4 @@ Before you get started with any of the labs, go through [these](https://github.c
 ## LABS
 ### [LAB 1 - Submitting telemetry data to the cloud](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
 
-### [LAB 2 - Receiving notifications from IoT Hub](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
+### [LAB 2 - Receiving notifications from IoT Hub](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab2.md)
