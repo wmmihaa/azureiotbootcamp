@@ -1,10 +1,12 @@
 ## Manage your device with device twins
 
+### Description
 In this step, you’re going to manage your device using device twin properties and tags.
 (Device twins are JSON documents that store device state information (metadata, configurations, and conditions). IoT Hub persists a device twin for each device that connects to it.)
 
-
+<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_3.png"/>
 ​
+## Get started
 
 1.  Log in to the [Azure Portal](https://portal.azure.com/)
 

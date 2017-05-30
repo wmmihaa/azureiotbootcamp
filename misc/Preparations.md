@@ -1,7 +1,9 @@
 ## Preparations
 ### Setup and content
 There is enough content to cover a 4-5h Bootcamp, for attendees with a spectrum of experiance. We had 30 attendees on two occations, while we were 3 people helping out. We started at 16:00 and took a break for Pizza.
-
+#### Target audiance
+* Developers
+* People with interest in Home automation, who want's to learn about IoT
 #### Proposed agenda
 ##### 10 min  
 Greet everyone, present the people helping out. 
