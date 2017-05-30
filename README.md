@@ -17,7 +17,7 @@ In the invitation to the IoT Bootcamp you were instructed to come prepared with 
 * Azure konto
 * Power BI konto
 
-If you didn't have time to prepare, no worries, just follow the instructions from [here](https://github.com/wmmihaa/azureiotbootcamp/blob/master/Prerequisites.md)
+If you didn't have time to prepare, no worries, just follow the instructions from [here](https://github.com/wmmihaa/azureiotbootcamp/blob/master/misc/Prerequisites.md)
 
 ## Your Devices
 Throughout this Bootcamp you’re going to be using a Raspberry PI 3 model B together with a TI sensor tag from Texas Instrument. 
@@ -36,14 +36,16 @@ The TI Sensor tag is a Bluetooth connected sensor. – In fact, it’s 10 sensor
 Your TI Sensor has been paired with your Raspberry PI.
 
 ## Set up your IoT Hub and register your device
-Before you get started with any of the labs, go through [these](https://github.com/wmmihaa/azureiotbootcamp/blob/master/CreateIoTHub.md) instructions to set up your Azure IoT hub. 
+Before you get started with any of the labs, go through [these](https://github.com/wmmihaa/azureiotbootcamp/blob/master/misc/CreateIoTHub.md) instructions to set up your Azure IoT hub. 
 
 ## LABS
 ### [LAB 1 - Submitting telemetry data to the cloud](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
 
 ### [LAB 2 - Receiving notifications from IoT Hub](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab2.md)
 
+### [LAB 3 - Manage your device with device twins](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab3.md)
+
 ## Running your own Bootcamp?
 This IoT Bootcamp is open to use for anyone. Prior to running the Bootcamp there are some preparations you’ll have to do in order to setup your devices and optimize the time avoiding having issues with network, sensors, logins etc etc…
 
-### [Preparations](https://github.com/wmmihaa/azureiotbootcamp/blob/master/Preparations.md)
+### [Preparations](https://github.com/wmmihaa/azureiotbootcamp/blob/master/miscPreparations.md)
