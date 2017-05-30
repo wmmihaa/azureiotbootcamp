@@ -13,7 +13,7 @@ These new features will require you to familiarize yourself with some additional
 ## Get started
 
 ### Setup Azure Service Bus
-Azure Service Bus is all about connectivity and give you the possibility of creating **Queues**, **Topiccs**, **Relays** and more. But all we need for this lab is a simple *Queue*.
+Azure Service Bus is all about connectivity and give you the possibility of creating **Queues**, **Topics**, **Relays** and more. But all we need for this lab is a simple *Queue*.
 
 1. Log in to the [Azure Portal](https://portal.azure.com/)
 2. Click **New** and type "service bus", click the "Serice Bus" option from the drop-down  
@@ -48,7 +48,7 @@ Azure Functions is about "Serverless computing" and can be used in many differen
 With the *Function* created, it's time to write the actual code. Replace the existing function code with:
 
 ```js
-module.exports = function (context, msg) {
+module.exports = function (context, readings) {
 
     var Client = require('azure-iothub').Client;
     var Message = require('azure-iot-common').Message;
@@ -64,9 +64,6 @@ module.exports = function (context, msg) {
         }
         else {
             context.log('Client connected');
-
-            var readings = JSON.parse(msg);
-
             // Only send warning iff temp is outside threshold
             if (readings.objectTemperature > 30 || readings.objectTemperature < 25) {
 
@@ -78,7 +75,7 @@ module.exports = function (context, msg) {
 
                 client.send(targetDevice, message, function (err) {
                     if (err)
-                        context.log.error('Could not send command: ' + err.message);
+                        context.log.error('Could not send command: ' + err);
                     else
                         context.log('Command sent');
 
@@ -89,6 +86,14 @@ module.exports = function (context, msg) {
     });
 };
 ```
+Under your newly created function : Go to Intergrate and fill the fields for
+Message type: Service Bus Queue.
+Queue name: "{Name of your queue}".
+Access rights: Listen.
+Service Bus connection: "{Connection to your Service bus}" (This field value can take some times to update).
+
+
+
 
 ### Register the new laptop device
 
@@ -122,6 +127,28 @@ node lab2.js
 
 2. If you stopped your Raspberry PI Device, fire it up again. 
 3. Cover the TI sensor with your hand to change the temperature. If the temperature exceeds the threshold a warning message should get received on your laptop device.
+
+
+#### Update Azure Stream Analytics
+
+Go back to the Stream Analytics Job eg:"ProcessingTelemetryData" which you created in Lab1.
+1. Select Outputs and Add. 
+Ouput alias : eg sbQueue
+Sink : Service bus Queue
+Service bus namespace: "{Namespace you created earlier}"
+Queue name:"{Queue name you created earlier}"
+
+2. Change query to : 
+SELECT
+    *
+INTO
+    {"Output alias"} eg: sbQueue
+FROM
+    temperatures
+
+Press Save.
+
+
 
 
  
