@@ -135,13 +135,14 @@ node lab2.js
 #### Update Azure Stream Analytics
 
 Go back to the Stream Analytics Job eg:"ProcessingTelemetryData" which you created in Lab1.
-1. Select Outputs and Add. 
+1. Stop the Job.
+2. Select Outputs and Add. 
 Ouput alias : eg sbQueue
 Sink : Service bus Queue
 Service bus namespace: "{Namespace you created earlier}"
 Queue name:"{Queue name you created earlier}"
 
-2. Change query to : 
+3. Change query to : 
 SELECT
     *
 INTO

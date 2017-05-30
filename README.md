@@ -42,3 +42,8 @@ Before you get started with any of the labs, go through [these](https://github.c
 ### [LAB 1 - Submitting telemetry data to the cloud](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab1.md)
 
 ### [LAB 2 - Receiving notifications from IoT Hub](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab2.md)
+
+## Running your own Bootcamp?
+This IoT Bootcamp is open to use for anyone. Prior to running the Bootcamp there are some preparations you’ll have to do in order to setup your devices and optimize the time avoiding having issues with network, sensors, logins etc etc…
+
+### [Preparations](https://github.com/wmmihaa/azureiotbootcamp/blob/master/Preparations.md)
