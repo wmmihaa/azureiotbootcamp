@@ -256,7 +256,7 @@ If you have never used Power BI, you’ll have to enable your account by signing
 You’re are finally ready to create your stunning report.
 
 1.	Open a browser (if you’re are using a different account for Power BI, open up a new Incognito window) and navigate to http://powerbi.com and sign in with your O365 account.
-2.	If it’s not there, make sure your device agent is running
+2. Make sure your device agent is running
 3. Click "My Workspace", and the "+" sign in the upper right corner to create a new dashboard
 4. Give the Dashboard a name and click Create
 5. Go to the Dashboard by clicking the link in the list of dashboards.
