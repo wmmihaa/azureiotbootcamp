@@ -42,6 +42,7 @@ Azure Functions is about "Serverless computing" and can be used in many differen
 
 5. Select *JavaScript* as the Language and **ServiceBusQueueTrigger-JavaScript** as the template
 6. Set the **Name** to "sendMessageToDevice" 
+7. Set *Queue name* to **temperaturereadings**
 7. Create a new *Service Bus connection* by clicking **new** and use the connection string you copied after creating the Service Bus namespace. 
 8. Set *Access rights* to **Listen** and click the **Create** button.
 
@@ -87,14 +88,6 @@ module.exports = function (context, mySbMsg) {
     });
 };
 ```
-Under your newly created function : Go to Intergrate and fill the fields for
-Message type: Service Bus Queue.
-Queue name: "{Name of your queue}".
-Access rights: Listen.
-Service Bus connection: "{Connection to your Service bus}" (This field value can take some times to update).
-
-
-
 
 ### Register the new laptop device
 
