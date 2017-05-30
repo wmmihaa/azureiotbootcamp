@@ -4,7 +4,7 @@
 In this step, you’re going to manage your device using device twin properties and tags.
 (Device twins are JSON documents that store device state information (metadata, configurations, and conditions). IoT Hub persists a device twin for each device that connects to it.)
 
-<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_3.png"/>
+<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_13.png"/>
 
 ## Get started
 
