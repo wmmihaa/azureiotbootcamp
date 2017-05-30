@@ -288,3 +288,5 @@ So far you have only been using temperatures, but the TI sensor tag has many oth
 ### Store your data in the cloud
 
 Live streaming data to reports is all fine and dandy. But in many cases we’d like to persist the data for later analysis.  [Cosmo DB]( https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) (previously known as Document DB) is a document database in Azure. Create a new database and update the Stream Analytics Job to push your sensor readings to the Cosmos collection. You can query the collection right from the Azure portal.
+
+**[BACK TO FIRST PAGE](https://github.com/wmmihaa/azureiotbootcamp/blob/master/README.md)**
