@@ -22,12 +22,12 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 3. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
-var Message = require('azure-iot-device').Message; // Used for wrapping the sensor readings befor sending it to the IoT Hub
+var Message = require('azure-iot-device').Message; // Used for wrapping the sensor readings before sending it to the IoT Hub
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
 var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]';
 ```
 
-4. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
+4. With the variables in place, it's time to create the client which is going to connect to the Azure IoT Hub
 ```js
 var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
 ```
@@ -256,16 +256,21 @@ If you have never used Power BI, you’ll have to enable your account by signing
 You’re are finally ready to create your stunning report.
 
 1.	Open a browser (if you’re are using a different account for Power BI, open up a new Incognito window) and navigate to http://powerbi.com and sign in with your O365 account.
-2.	Click Streaming datasets and notice the temperatures data source. If it’s not there, make sure your device agent is running, or at least give it a minute or two. If it’s still not showing up, check the Steam Analytics Job for any errors
-3.	Navigate to your Dashboard, and click Add tile in the upper-right corner.
-4.	Select CUSTOM STREAMING DATA and click Next
-5.	Select the Temperatures dataset and click Next
-6.	Set the Visualization Type to Line chart, Axis to timestamp and set Values to temperature.
-7.	Continue to give your tile a good name and subtitle.
+2. Make sure your device agent is running
+3. Click "My Workspace", and the "+" sign in the upper right corner to create a new dashboard
+4. Give the Dashboard a name and click Create
+5. Go to the Dashboard by clicking the link in the list of dashboards.
+6. In the top menu click **Add tile**
+7. Select **CUSTOM STREAMING DATA**, and click **Next**.
+8. In the list of datasets, select the one you created in Azure Stream Analytics and click **Next**.
+9. From the *Visualization Type* list select **Line chart**.
+10. Set *Axis value* to **timeStamp** and *Value* to **objectTemperature** and click **Next**.
+11. Give your tile a meaningful name and click **Apply**.
+
 
 #### Try it out
 
-If you stopped your Device Agent, fire it up again. After 5-10 seconds you should see data presented on your power BI Dashboard.
+If you stopped your Device Agent, fire it up again. After 5-10 seconds you should see data presented on your power BI Dashboard Tile. Try cover the sensor with your hand to see the graph updating.
 
 
 ## GET CREATIVE 
