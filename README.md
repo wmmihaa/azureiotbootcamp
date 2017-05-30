@@ -48,4 +48,4 @@ Before you get started with any of the labs, go through [these](https://github.c
 ## Running your own Bootcamp?
 This IoT Bootcamp is open to use for anyone. Prior to running the Bootcamp there are some preparations you’ll have to do in order to setup your devices and optimize the time avoiding having issues with network, sensors, logins etc etc…
 
-### [Preparations](https://github.com/wmmihaa/azureiotbootcamp/blob/master/miscPreparations.md)
+### [Preparations](https://github.com/wmmihaa/azureiotbootcamp/blob/master/misc/Preparations.md)
