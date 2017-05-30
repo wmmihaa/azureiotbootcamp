@@ -22,12 +22,12 @@ You are going to develop the Agent using JavaScript on your laptop using Visual 
 3. Next, let's declare some of the objects and variables you're going to use:
 
 ```js
-var Message = require('azure-iot-device').Message; // Used for wrapping the sensor readings befor sending it to the IoT Hub
+var Message = require('azure-iot-device').Message; // Used for wrapping the sensor readings before sending it to the IoT Hub
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
 var connectionString = '[THE DEVICE CONNECTIONSTRING YOU COPIED WHEN REGISTERING THE DEVICE]';
 ```
 
-4. With the variables in place, it's time to create the client witch is going to connect to the Azure IoT Hub
+4. With the variables in place, it's time to create the client which is going to connect to the Azure IoT Hub
 ```js
 var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
 ```
