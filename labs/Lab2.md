@@ -39,6 +39,7 @@ Azure Functions is about "Serverless computing" and can be used in many differen
 3. Wait until the deployment is complete and open the *Function App* by navigating to your *Resource group*.
 4. Click the "+" sign next to *"Functions"* and the **Custom function**
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_10.png"/>
+
 5. Select *JavaScript* as the Language and **ServiceBusQueueTrigger-JavaScript** as the template
 6. Set the **Name** to "sendMessageToDevice" 
 7. Create a new *Service Bus connection* by clicking **new** and use the connection string you copied after creating the Service Bus namespace. 
@@ -48,7 +49,7 @@ Azure Functions is about "Serverless computing" and can be used in many differen
 With the *Function* created, it's time to write the actual code. Replace the existing function code with:
 
 ```js
-module.exports = function (context, readings) {
+module.exports = function (context, mySbMsg) {
 
     var Client = require('azure-iothub').Client;
     var Message = require('azure-iot-common').Message;
@@ -65,10 +66,10 @@ module.exports = function (context, readings) {
         else {
             context.log('Client connected');
             // Only send warning iff temp is outside threshold
-            if (readings.objectTemperature > 30 || readings.objectTemperature < 25) {
+            if (mySbMsg.objectTemperature > 30 || mySbMsg.objectTemperature < 25) {
 
                 var warning = {
-                    acState: readings.objectTemperature > 30 ? "On" : "Off"
+                    acState: mySbMsg.objectTemperature > 30 ? "On" : "Off"
                 }
 
                 var message = new Message(JSON.stringify(warning));
