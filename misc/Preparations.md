@@ -61,5 +61,7 @@ cd node-v7.7.2-linux-armv7l
 ```
 6. Shutdown, detatch and move on to next device
 
+BTW... keep track of which sensor goes with what device...
+
 
 
