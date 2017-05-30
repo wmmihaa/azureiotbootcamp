@@ -88,6 +88,15 @@ module.exports = function (context, mySbMsg) {
     });
 };
 ```
+#### Add NPM packages to Azure Function
+As with using NPM packages when developing localy, we'll need to install the NPM packages used in the code (*azure-iothub azure-iot-common*). 
+1. Click on your Azure Fuction App (function group), and then **Platform features**
+2. Under *DEVELOPMENT TOOLS* click **Console**.
+3. In the console window type 
+```
+npm i azure-iothub azure-iot-common
+```
+This operation takes 2-3 minutes, and might result in a **"Bad request"** response (but it should still work)
 
 ### Register the new laptop device
 
