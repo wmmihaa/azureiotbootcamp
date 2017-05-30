@@ -125,6 +125,6 @@ Now we will add support for the device itself to report how it is connected to t
  ```
 9. Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly. Run again the AddTagsAndQuery script and verify the result of the previously empty second query.
 ​
-**DONE! **
+**DONE!**
 
 **[BACK TO FIRST PAGE](https://github.com/wmmihaa/azureiotbootcamp/blob/master/README.md)**
