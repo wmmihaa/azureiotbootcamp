@@ -1,4 +1,30 @@
 ## Preparations
+### Setup and content
+There is enough content to cover a 4-5h Bootcamp, for attendees with a spectrum of experiance. We had 30 attendees on two occations, while we were 3 people helping out. We started at 16:00 and took a break for Pizza.
+
+#### Proposed agenda
+##### 10 min  
+Greet everyone, present the people helping out. 
+
+##### 25 min  
+High level walkthrough of Azure portal,  Azure IoT Hub and services related to the Bootcamp (Stream Analytics, Functions & ServiceBus)
+
+##### 25 min  
+High level walkthrough of Node.js and JavaScript.
+
+##### 45-60 min  
+LAB 1 - Submitting telemetry data to the cloud
+
+##### 30 min  
+Pizza break
+
+##### 45-60 min  
+LAB 2 - Receiving notifications from IoT Hub
+
+##### 30-45 min  
+LAB 3 - Manage your device with device twins
+
+
 ### Get Devices
 Microsoft was very helpful lending us devices and sensors. Ping me for contacts...
 We used Raspberry PI 3 model B together with a TI sensor tag from Texas Instrument.
