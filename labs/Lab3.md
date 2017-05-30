@@ -5,7 +5,7 @@ In this step, you’re going to manage your device using device twin properties 
 (Device twins are JSON documents that store device state information (metadata, configurations, and conditions). IoT Hub persists a device twin for each device that connects to it.)
 
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_3.png"/>
-​
+
 ## Get started
 
 1.  Log in to the [Azure Portal](https://portal.azure.com/)
@@ -20,7 +20,7 @@ In this step, you’re going to manage your device using device twin properties 
 ​<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_12.png"/>
 
 
-## Add tags using a service app
+### Add tags using a service app
 Tags is a section of the JSON document that the solution back end can read from and write to. It can be used for querying and grouping of devices. Tags are not visible to device apps.
 
 4. In the same directory where you have been working so far, create a new script called **addtagsandqueryapp**. Install the azure-iothub package locally. Add the following code to the AddTagsAndQuery.js file, and substitute the {iot hub connection string} and {myDeviceId} placeholders accordingly:
@@ -83,7 +83,7 @@ Tags is a section of the JSON document that the solution back end can read from 
 
 7. Run the script. Certify that the first query returns your device while the second returns empty.
 
-## Report device properties
+### Report device properties
 
 Now we will add support for the device itself to report how it is connected to the cloud by adding a reported property.
 
@@ -125,7 +125,9 @@ Now we will add support for the device itself to report how it is connected to t
  }
  });
  ```
-9. Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly. Run again the AddTagsAndQuery script and verify the result of the previously empty second query.
+
+### Try it out
+Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly. Run again the AddTagsAndQuery script and verify the result of the previously empty second query.
 ​
 **DONE!**
 
