@@ -121,6 +121,26 @@ client.on('message', function (msg) {
 });
 ```
 
+#### Update Azure Stream Analytics
+
+Go back to the Stream Analytics Job eg:"ProcessingTelemetryData" which you created in Lab1.
+1. Stop the Job.
+2. Select Outputs and Add. 
+Ouput alias : eg sbQueue
+Sink : Service Bus Queue
+Service bus namespace: "{Namespace you created earlier}"
+Queue name:"{Queue name you created earlier}"
+
+3. Change query to : 
+SELECT
+    *
+INTO
+    sbQueue
+FROM
+    temperatures
+
+Press **Save**.
+
 #### Try it out
 
 1. On your laptop. open a new console (CTTRL+Shift+C from VS Code). and type:
@@ -131,28 +151,5 @@ node lab2.js
 2. If you stopped your Raspberry PI Device, fire it up again. 
 3. Cover the TI sensor with your hand to change the temperature. If the temperature exceeds the threshold a warning message should get received on your laptop device.
 
-
-#### Update Azure Stream Analytics
-
-Go back to the Stream Analytics Job eg:"ProcessingTelemetryData" which you created in Lab1.
-1. Stop the Job.
-2. Select Outputs and Add. 
-Ouput alias : eg sbQueue
-Sink : Service bus Queue
-Service bus namespace: "{Namespace you created earlier}"
-Queue name:"{Queue name you created earlier}"
-
-3. Change query to : 
-SELECT
-    *
-INTO
-    {"Output alias"} eg: sbQueue
-FROM
-    temperatures
-
-Press Save.
-
-
-
-
  
+**[BACK TO FIRST PAGE](https://github.com/wmmihaa/azureiotbootcamp/blob/master/README.md)**
