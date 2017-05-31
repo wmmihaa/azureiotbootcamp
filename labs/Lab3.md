@@ -23,7 +23,11 @@ In this step, you’re going to manage your device using device twin properties 
 ### Add tags using a service app
 Tags is a section of the JSON document that the solution back end can read from and write to. It can be used for querying and grouping of devices. Tags are not visible to device apps.
 
-4. In the same directory where you have been working so far, create a new script called **addtagsandqueryapp**. Install the azure-iothub package locally. Add the following code to the AddTagsAndQuery.js file, and substitute the {iot hub connection string} and {myDeviceId} placeholders accordingly:
+4. In the same directory where you have been working so far, create a new script called **AddTagsAndQuery.js**. Install the azure-iothub package locally. 
+```
+npm i azure-iothub
+```
+5. Add the following code to the *AddTagsAndQuery.js* file, and substitute the {iot hub connection string} and {myDeviceId} placeholders accordingly:
 
 ```js
 'use strict';
@@ -55,9 +59,9 @@ Tags is a section of the JSON document that the solution back end can read from 
      }
  });
  ```
-5. Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly.
+6. Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly.
 
-6. You can also query the IoT Hub for devices that match a particular search criteria. Add the following code at the end of AddTagsAndQuery.js to implement the queryTwins function
+7. You can also query the IoT Hub for devices that match a particular search criteria. Add the following code at the end of *AddTagsAndQuery.js* file to implement the **queryTwins** function
 
  ```js
  var queryTwins = function() {
@@ -81,13 +85,13 @@ Tags is a section of the JSON document that the solution back end can read from 
  };
  ```
 
-7. Run the script. Certify that the first query returns your device while the second returns empty.
+8. Run the script. Certify that the first query returns your device while the second returns empty.
 
 ### Report device properties
 
 Now we will add support for the device itself to report how it is connected to the cloud by adding a reported property.
 
-8. Create a new script called **ReportConnectivity.js** in your working folder. Add the following code:
+9. Create a new script called **ReportConnectivity.js** in your working folder. Add the following code:
  ```js
  'use strict';
  var Client = require('azure-iot-device').Client;
@@ -129,6 +133,7 @@ Now we will add support for the device itself to report how it is connected to t
 ### Try it out
 Run the script. Go back to the **Device Explorer** in the azure portal and verify that JSON document has been modified accordingly. Run again the AddTagsAndQuery script and verify the result of the previously empty second query.
 ​
+
 **DONE!**
 
 **[BACK TO FIRST PAGE](https://github.com/wmmihaa/azureiotbootcamp/blob/master/README.md)**
