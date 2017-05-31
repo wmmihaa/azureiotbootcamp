@@ -13,7 +13,10 @@ These new features will require you to familiarize yourself with some additional
 ## Get started
 
 ### Setup Azure Service Bus
-Azure Service Bus is all about connectivity and give you the possibility of creating **Queues**, **Topics**, **Relays** and more. But all we need for this lab is a simple *Queue*.
+Azure Service Bus is all about connectivity and give you the option of creating **Queues**, **Topics**, **Relays** and more. But all we need for this lab is a simple *Queue*.
+
+In this scenario you are going to be using Azure Service Bus as an output from your existing Azure Stream Analytics Job. In the next step you're going to add an Azure Function to off-load these messagse and send them to your laptop device.
+
 
 1. Log in to the [Azure Portal](https://portal.azure.com/)
 2. Click **New** and type "service bus", click the "Serice Bus" option from the drop-down  
