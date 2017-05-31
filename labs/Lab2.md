@@ -19,17 +19,26 @@ In this scenario you are going to be using Azure Service Bus as an output from y
 
 
 1. Log in to the [Azure Portal](https://portal.azure.com/)
+
 2. Click **New** and type "service bus", click the "Serice Bus" option from the drop-down  
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_7.png"/>
+
 3. Select *Service Bus* from the list and click **Create** to create a new Service Bus namespace.
+
 4.	Give your Service Bus namespace a **Name** and click **Create** after selecting Resource group and Location (North- or West Europe). 
+
 5. Wait for the namespace to be created and browse to it from the Resource Group.
+
 6. Add a new **Queue** by clicking the "+" sign at the top of the blade:
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_8.png"/>
+
 7. Give the *Queue* a name, such as "temperaturereadings".
+
 8. Leave all other settings and click **Create**
+
 9. From the Service Bus namespace, select the *Share access policies* option on the left:
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_9.png"/>
+
 10. Click the *RootManageSharedAccessKey* and copy the **CONNECTION STRING–PRIMARY KEY**. Save the key as you're going to use it later.
 
 In the last step of this exercise you forward messages to the queue by updating the Azure Stream Analytics Job you created in Lab1. But before we do that, we need to create an Azure Function and register a new device.
