@@ -14,8 +14,8 @@ In the invitation to the IoT Bootcamp you were instructed to come prepared with 
 * Visual Studio Code
 * Node.js
 * Putty
-* Azure konto
-* Power BI konto
+* Azure account
+* Power BI account
 
 If you didn't have time to prepare, no worries, just follow the instructions from [here](https://github.com/wmmihaa/azureiotbootcamp/blob/master/misc/Prerequisites.md)
 
