@@ -116,7 +116,8 @@ This operation takes 2-3 minutes, and might result in a **"Bad request"** respon
 2.  While in the IoT Hub, click *Shared access policies* and copy the connection string of the **Service** policy.
 
 ```
-Different policies comes predefined with different permissions. For instance, **Device** policy can send events and recieve commands, while **Service** policy allow sending commands to devices.
+Different policies comes predefined with different permissions. For instance, **Device** policy can 
+send events and recieve commands, while **Service** policy allow sending commands to devices.
 ````
 
 3. Go back to the function and update the connection string line 6.
