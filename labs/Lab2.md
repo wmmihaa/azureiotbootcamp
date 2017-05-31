@@ -25,14 +25,14 @@ In this scenario you are going to be using Azure Service Bus as an output from y
 
 3. Select *Service Bus* from the list and click **Create** to create a new Service Bus namespace.
 
-4.	Give your Service Bus namespace a **Name** and click **Create** after selecting Resource group and Location (North- or West Europe). 
+4.	Give your Service Bus namespace a **Name** and click **Create** after selecting Resource group and Location (North- or West Europe). **Copy the name as you'll be using it in the last step**. 
 
 5. Wait for the namespace to be created and browse to it from the Resource Group.
 
 6. Add a new **Queue** by clicking the "+" sign at the top of the blade:
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_8.png"/>
 
-7. Give the *Queue* a name, such as "temperaturereadings".
+7. Give the *Queue* a name, such as "temperaturereadings".  **Copy the name as you'll be using it in the last step**. 
 
 8. Leave all other settings and click **Create**
 
