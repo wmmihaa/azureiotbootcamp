@@ -115,8 +115,10 @@ This operation takes 2-3 minutes, and might result in a **"Bad request"** respon
 1. Go back to your IoT hub, click **Device Explorer** and add a new device. Give it a name (eg "device2"), and copy and save the *Connection string". Be aware that this name has to correlate to the name used in the Azure Function created in the previous step.
 2.  While in the IoT Hub, click *Shared access policies* and copy the connection string of the **Service** policy.
 
-<pre style="background:yellow; color:black">
-<b>Different policies comes predefined with different permissions. For instance, **Device** policy can send events and recieve commands, while **Service** policy allow sending commands to devices.</b>
+<pre>
+<b>Different policies comes predefined with different permissions. 
+For instance, **Device** policy can send events and recieve commands, 
+while **Service** policy allow sending commands to devices.</b>
 </pre>
 
 3. Go back to the function and update the connection string line 6.
