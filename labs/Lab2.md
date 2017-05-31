@@ -68,7 +68,7 @@ module.exports = function (context, mySbMsg) {
     var Message = require('azure-iot-common').Message;
 
     var connectionString = "YOUR IOT SERVICE CONNECTION STRING";
-    var targetDevice = 'device2';
+    var targetDevice = 'device2'; 
 
     var client = Client.fromConnectionString(connectionString);
 
@@ -101,7 +101,7 @@ module.exports = function (context, mySbMsg) {
 };
 ```
 #### Add NPM packages to Azure Function
-As with using NPM packages when developing localy, we'll need to install the NPM packages used in the code (*azure-iothub azure-iot-common*). 
+As with using NPM packages when developing localy, we'll need to install the NPM packages used in the code (*azure-iothub* and *azure-iot-common*). 
 1. Click on your Azure Fuction App (function group), and then **Platform features**
 2. Under *DEVELOPMENT TOOLS* click **Console**.
 3. In the console window type 
@@ -112,8 +112,13 @@ This operation takes 2-3 minutes, and might result in a **"Bad request"** respon
 
 ### Register the new laptop device
 
-1. Go back to your IoT hub, click **Device Explorer** and add a new device. Give it a name (eg "device2"), and copy and save the *Connection string".
+1. Go back to your IoT hub, click **Device Explorer** and add a new device. Give it a name (eg "device2"), and copy and save the *Connection string". Be aware that this name has to correlate to the name used in the Azure Function created in the previous step.
 2.  While in the IoT Hub, click *Shared access policies* and copy the connection string of the **Service** policy.
+
+<pre style="background:yellow; color:black">
+<b>Different policies comes predefined with different permissions. For instance, **Device** policy can send events and recieve commands, while **Service** policy allow sending commands to devices.</b>
+</pre>
+
 3. Go back to the function and update the connection string line 6.
 4. Using VS Code, create a new file called **lab2.js**
 5. Copy the code from the lab1.js file and make the following changes:
