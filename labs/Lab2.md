@@ -112,19 +112,19 @@ This operation takes 2-3 minutes, and might result in a **"Bad request"** respon
 
 ### Register the new laptop device
 
-1. Go back to your IoT hub, click **Device Explorer** and add a new device. Give it a name (eg "device2"), and copy and save the *Connection string". Be aware that this name has to correlate to the name used in the Azure Function created in the previous step.
-2.  While in the IoT Hub, click *Shared access policies* and copy the connection string of the **Service** policy.
+1. Go back to your IoT hub, click **Device Explorer** and add a new device. Give it a name (eg "device2"), and copy and save the *Connection string*. Be aware that this name has to correlate to the name used in the Azure Function created in the previous step.
+2.  While in the IoT Hub, click *Shared access policies* and copy the connection string of the **Service** policy as well.
 
 <pre>
 Different policies comes predefined with different permissions. For instance, <b>Device</b> policy can
 send events and recieve commands, while <b>Service</b> policy allow sending commands to devices.
 </pre>
 
-3. Go back to the function and update the connection string line 6.
+3. Navigate back to your Azure Function and update the connection string (line 6).
 4. Using VS Code, create a new file called **lab2.js**
 5. Copy the code from the lab1.js file and make the following changes:
 * Remove the referense to the SensorTag at the top
-* Change the connection string to the device connection string you copied priviously.
+* Change the connection string to the **device** connection string you copied priviously.
 * Remove the call to the **setUpSensor**
 * Remove the **setUpSensor** function
 
@@ -141,22 +141,23 @@ client.on('message', function (msg) {
 
 #### Update Azure Stream Analytics
 
-Go back to the Stream Analytics Job eg:"ProcessingTelemetryData" which you created in Lab1.
+Go back to the Stream Analytics Job you created in Lab1.
 1. Stop the Job.
-2. Select Outputs and Add. 
-Ouput alias : eg sbQueue
-Sink : Service Bus Queue
-Service bus namespace: "{Namespace you created earlier}"
-Queue name:"{Queue name you created earlier}"
+2. Select Outputs click **Add** and use the following settings to create a new output. 
+* Ouput alias : eg sbQueue
+* Sink : Service Bus Queue
+* Service bus namespace: "{Namespace you created earlier}"
+* Queue name:"{Queue name you created earlier}"
 
-3. Change query to : 
+3. Add the query below underneath the existing query: 
+```
 SELECT
     *
 INTO
     sbQueue
 FROM
     temperatures
-
+```
 Press **Save**.
 
 #### Try it out
