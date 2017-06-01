@@ -53,7 +53,7 @@ npm i azure-iothub
              console.error('Could not update twin: ' + err.constructor.name + ': ' + err.message);
            } else {
              console.log(twin.deviceId + ' twin updated successfully');
-             queryTwins();
+            // queryTwins();
            }
          });
      }
@@ -85,7 +85,8 @@ npm i azure-iothub
  };
  ```
 
-8. Run the script. Certify that the first query returns your device while the second returns empty.
+8. Un-comment the the call to the **queryTwins** (inside the twin.update callback). 
+9. Run the script. Certify that the first query returns your device while the second returns empty.
 
 ### Report device properties
 
