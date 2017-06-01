@@ -45,7 +45,7 @@ Before you get started with any of the labs, go through [these](https://github.c
 
 ### [LAB 3 - Working with device state using device twins](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab3.md)
 
-### [LAB 4 - Device Management](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab3.md)
+### [LAB 4 - Device Management](https://github.com/wmmihaa/azureiotbootcamp/blob/master/labs/Lab4.md)
 
 ## Running your own Bootcamp?
 This IoT Bootcamp is open to use for anyone. Prior to running the Bootcamp there are some preparations you’ll have to do in order to setup your devices and optimize the time avoiding having issues with network, sensors, logins etc etc…
