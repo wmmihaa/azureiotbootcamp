@@ -3,11 +3,11 @@
 ## Description
 From a functional perspective, everything you’ve done so far works as expected. However, in the real world we face problems and issues. Fixing and managing these issues can be challenging when the device is deployed to a remote location.
 
-Devices are in many aspects no different other computers and servers. For instance, it has a operating system that periodically needs to get patched. Same goes for NPM packages we install to communicate with Azure IoT Hub or sensors. They are no different in that they to get security updates, fixes etc. Last of, your colleagues (not you obviously) probably end up writing bugs occasionally…
+Devices are in many aspects no different other computers and servers. For instance, it has a operating system that periodically needs to get patched. Same goes for NPM packages we install to communicate with Azure IoT Hub or sensors. They are no different in that they to get security updates, fixes etc. Your colleagues (not you obviously) might end up writing bugs occasionally…
 
-All this brings the need for IoT Operation and Device Management. In this lab you’re going to work with a tool called **microServiceBus.com**. microServiceBus.com is not an IoT Hub, but device management for other IoT Hubs such as Azure IoT Hub.
+All this brings the need for **IoT Operation** and **Device Management**. In this lab you’re going to work with a tool called **microServiceBus.com**. microServiceBus.com is **not** an IoT Hub, but device management for other IoT Hubs such as Azure IoT Hub.
 
-The lab is going to be identical to Lab 1, but delivered using microServiceBus.com, only to give you an idea of managing your IoT solution in a professional way.
+The lab is going to be identical to Lab 1, but delivered, deployed and managed using microServiceBus.com, only to give you an idea of managing your IoT solution in a professional way.
 
 <img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_3.png"/>
 
@@ -22,17 +22,18 @@ An organization is a where all your devices, or nodes as they are called, are ma
 2. Fill out your details, accept the terms and conditions and click “**Register**”. 
 3. Check your mail box, open the confirmation mail and click the “**Register**” link. 
 4. Log in to the microServiceBus.com site using the credentials you supplied in step 2. 
-5. Select "Option 2. Use my Microsoft Azure IoT Hub, and provide a **iothubowner** for your Azure IoT Hub. 
+5. Select **"Option 2. Use my Microsoft Azure IoT Hub"**, and provide a **iothubowner** for your Azure IoT Hub. 
 6. Uncheck the “*Add sample scenarios*” checkbox and click *Create organization* 
 
 ### Download the device package
 Your organization is now linked with your Azure IoT Hub, and the devices you’ve created in earlier labs are should now be accessable from the [Nodes page](https://microservicebus.com/Nodes)
 
-But before we begin, we need to install the *microservicebus.node* package.
+But before we begin, we need to install the *microservicebus.node* package on your Raspberry PI.
 
 *Using PuTTY, navigate to the IOTBOOTCAMP folder on your Raspberry PI and type:*
 ```
 mkdir msb
+cd msb
 ```
 Install the npm package by typing:
 ```
@@ -41,9 +42,7 @@ npm install microservicebus.node
 
 This step will now install an NPM package which will serve as our generic device application. Don't wait for the the package to complete, just continue with the exercise.
 
-## Exersice
-
-### Create a node
+### Regiter and start the node
 In the microServiceBus portal, a **Node** referes to the _gateway_ or _agent_ application that will run on the device. The “node” is responsible for interacting with the sensors attached to the device and also understands how to communicate with your *IoT Hub*.
 
 1. Navigate to the [Nodes]( https://www.microservicebus.com/Nodes) page using the menu on the upper left corner.
@@ -52,7 +51,11 @@ In the microServiceBus portal, a **Node** referes to the _gateway_ or _agent_ ap
 With the NPM papckage installed, -it’s time to start it up. The NPM package you installed earlier is a generic client which hasn’t been given credentials to log in to your organization. To initiate the node…
 
 1. Still on the Nodes page, click the “**Generate**” button to receive a temporary code.
-2. Open a new terminal window and type: **node start -c [YOUR CODE] -n [NAME OF NODE]**
+2. Using PuTTY navigate to the microservicebus.node folder:
+```
+cd node_modules/microservicebus.node
+```
+3. Open a new terminal window and type: **node start -c [YOUR CODE] -n [NAME OF NODE]**
 ```js
 eg node start -c ABC123 -n device1
 ```
