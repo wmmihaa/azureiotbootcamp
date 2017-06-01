@@ -1,4 +1,4 @@
-## Manage your device with device twins
+## Working with device state using device twins
 
 ### Description
 In this step, you’re going to manage your device using device twin properties and tags.
