@@ -40,7 +40,7 @@ Install the npm package by typing:
 npm install microservicebus.node
 ```
 
-This step will now install an NPM package which will serve as our generic device application. Don't wait for the the package to complete, just continue with the exercise.
+This step will now install an NPM package which will serve as our generic device application. **Don't wait for the the package to complete, just continue with the exercise**.
 
 ### Regiter and start the node
 In the microServiceBus portal, a **Node** referes to the _gateway_ or _agent_ application that will run on the device. The “node” is responsible for interacting with the sensors attached to the device and also understands how to communicate with your *IoT Hub*.
