@@ -72,7 +72,7 @@ Setting up the sensor is done in three steps:
 
 For more detailed information about the TI Sensor tag browse to [NPM page](https://www.npmjs.com/package/sensortag).
 
-To simplify these steps add the function below att the bottom of the **lab1.js** file:
+To simplify these steps add the function below at the **bottom** of the **lab1.js** file:
 ```js
 function setUpSensor(sensorId, done) {
   sensorId = sensorId.replace(/:/g, '').toLowerCase(); 
@@ -86,7 +86,7 @@ function setUpSensor(sensorId, done) {
     }
     else {
       console.log('\tSensor tag found...');
-      console.log('sensorTag:' + sensorTag);
+      console.log('\tsensorTag:' + sensorTag);
 
       // Connect the Sensor Tag
       sensorTag.connectAndSetUp(function (err) {
@@ -104,7 +104,7 @@ function setUpSensor(sensorId, done) {
   });
 }
 ```
-This function will return a callback with the sensorTag object together with any errors. Call the setUpSensor function directly after you have successfully connected to the IoT Hub:
+This function will return a callback with the sensorTag object together with any errors. Call the setUpSensor function **directly after you have successfully connected to the IoT Hub**:
 ```js
 setUpSensor(sensorId, function (err, sensorTag) {
     if (err) {
@@ -115,6 +115,11 @@ setUpSensor(sensorId, function (err, sensorTag) {
     }
 });
 ```
+<pre>
+<b>PRO TIP:</b>
+<p>Use SHIFT+ALT+F to format your code and make it proper indented.</p> 
+</pre>
+
 ### Try it out
 #### Prepare the Device
 1. Unpack the Raspberry PI and attach the USB power cord. The device is pre-configured to connect to the network. 
@@ -179,7 +184,7 @@ setInterval(function () {
         else {
             console.log('\tObject Temperature: ' + objectTemperature);
             console.log('\tAmbient Temperature: ' + ambientTemperature);
-            // Add code to submit the temperature to the ioT Hub
+            // Add code to submit the temperature to the IoT Hub
         }
     });
 }, 2000);
@@ -197,7 +202,8 @@ Feel free to save your work and deploy it to the Device. You should get your tem
 Wow, you’re getting close. All that is left to do is to actually submit the readings using the **sendEvent** function on the **client** object. The *sendEvent* function takes two parameters; message and callback. 
 
 The message is a Azure IoT object that we’re going to wrap our sensor readings with. But first let’s create a JavaScript object with the data we want to send. Directly after you’ve received the temperatures, create an object called **readings**
-```
+```js
+// Add code to submit the temperature to the IoT Hub
 var readings = {
     objectTemperature: objectTemperature,
     ambientTemperature: ambientTemperature,
