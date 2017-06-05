@@ -169,13 +169,13 @@ If all goes well you should read something like:
 ### Read temperatures
 
 In this step you will write code to read the temperature sensor on an every second interval. Setting up an interval using JavaScript is very easy using the **setInterval** function. The *setInterval* function takes two parameters; a callback function (where we call the sensor)  and the interval (in ms) of how often we like it to trigger. Eg:
-```
+```js
 setInterval(function () {
     // DO SOMETHING
 }, 1000);
 ```
 1. Directly after the line where you’re successfully connected to the TI Sensor, type:
-```
+```js
 setInterval(function () {
     sensorTag.readIrTemperature(function (error, objectTemperature, ambientTemperature) {
         if (err) {
@@ -211,12 +211,12 @@ var readings = {
 };
 ```
 Next, create an IoT message by serializing the *readings* object:
-```
+```js
 var json = JSON.stringify(readings); 
 var message = new Message(json);
 ```
 Last step… send the message to the IoT Hub:
-```
+```js
 client.sendEvent(message, function(err){
     if (err) {
         console.log("Unable to send message. Error:" + err);
