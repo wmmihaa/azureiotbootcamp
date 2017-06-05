@@ -1,7 +1,7 @@
 var SensorTag = require('sensortag');
 var Message = require('azure-iot-device').Message;
 var Protocol = require('azure-iot-device-mqtt').Mqtt; // AMQP or MQTT. Either one will work for this lab
-var connectionString = '...';
+var connectionString = 'HostName=demo-AzureIoTHub.azure-devices.net;DeviceId=DEVICE1;SharedAccessKey=HSDV4Dbq8bbR9i5X2sPrtODl2DnqnTuxjDVsxg6Lvq4=';
 
 var client = require('azure-iot-device').Client.fromConnectionString(connectionString, Protocol);
 
@@ -17,37 +17,11 @@ client.open(function (err) {
             }
             else {
                 console.log('\tSuccessfully connected to TI sensor tag');
-
-                setInterval(function () {
-                    sensorTag.readIrTemperature(function (error, objectTemperature, ambientTemperature) {
-                        if (err) {
-                            console.log('Unable to read sensor data:' + error);
-                        }
-                        else {
-                            console.log('\tObject Temperature: ' + objectTemperature);
-                            console.log('\tAmbient Temperature: ' + ambientTemperature);
-
-                            var readings = {
-                                objectTemperature: objectTemperature,
-                                ambientTemperature: ambientTemperature,
-                                timeStamp: new Date(),
-                            };
-
-                            var json = JSON.stringify(readings);
-                            var message = new Message(json);
-
-                            client.sendEvent(message, function (err) {
-                                if (err) {
-                                    console.log("Unable to send message. Error:" + err);
-                                }
-                                else {
-                                    console.log('\tSuccessfully Submitted readings to the IoT hub');
-                                    console.log();
-                                }
-                            });
-                        }
-                    });
-                }, 2000);
+                
+                setUpSensor('247189BC1206', function(){
+                    console.log('COMPLETE');
+                    
+                });
             }
         });
     }
@@ -59,15 +33,17 @@ Setting up the sensor is done in three steps:
 2. Connect the the Sensor Tag
 3. Enable sensor (Temperature in our case)
 */
-function setUpSensor(done) {
+function setUpSensor(sensorId, done) {
     // Find the Sensor Tag
-    SensorTag.discover(function (sensorTag) {
+    SensorTag.discoverById(sensorId, function (sensorTag) {
         if (!sensorTag) {
             console.error('Could not find TI Sensor');
             done(err, null);
         }
         else {
             console.log('\tSensor tag found...');
+            console.log('sensorTag:' + sensorTag);
+            
             // Connect the Sensor Tag
             sensorTag.connectAndSetUp(function (err) {
                 if (err) {

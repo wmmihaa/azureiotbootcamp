@@ -55,9 +55,10 @@ Close the console/terminal using **CTRL+C**.
 You can run the application from within VS Code by hitting **F5**.
 
 ## Get temperature readings
-Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package:
+Now you’re ready to start receiving sensor data from the TI sensor. Back in VS Code, at the top, create a reference to the TI Sensor package, and replace the **sensorId** placeholder with the ID inside the sensor box (on the lid).
 ```js
 var SensorTag = require('sensortag');
+var sensorId = '[YOUR SENSOR ID]';
 ```
 <pre>
 <b>Please note that we are not installing the package yet, as it won't run on your laptop anyway...</b> 
@@ -73,34 +74,39 @@ For more detailed information about the TI Sensor tag browse to [NPM page](https
 
 To simplify these steps add the function below att the bottom of the **lab1.js** file:
 ```js
-function setUpSensor(done) {
-    // Find the Sensor Tag
-    SensorTag.discover(function (sensorTag) {
-        if (!sensorTag) {
-            console.error('Could not find TI Sensor');
-            done(err, null);
+function setUpSensor(sensorId, done) {
+  sensorId = sensorId.replace(/:/g, '').toLowerCase(); 
+  // Find the Sensor Tag
+  console.log('Trying to find the sensor tag: ' + sensorId);
+  
+  SensorTag.discoverById(sensorId, function (sensorTag) {
+    if (!sensorTag) {
+      console.error('Could not find TI Sensor');
+      done(err, null);
+    }
+    else {
+      console.log('\tSensor tag found...');
+      console.log('sensorTag:' + sensorTag);
+
+      // Connect the Sensor Tag
+      sensorTag.connectAndSetUp(function (err) {
+        if (err) {
+          done(err, null);
         }
         else {
-            console.log('\tSensor tag found...');
-            // Connect the Sensor Tag
-            sensorTag.connectAndSetUp(function (err) {
-                if (err) {
-                    done(err, null);
-                }
-                else {
-                    // Enable the temperature sensor 
-                    sensorTag.enableIrTemperature(function (err) {
-                        done(err, sensorTag);
-                    });
-                }
-            });
+          // Enable the temperature sensor 
+          sensorTag.enableIrTemperature(function (err) {
+            done(err, sensorTag);
+          });
         }
-    });
+      });
+    }
+  });
 }
 ```
 This function will return a callback with the sensorTag object together with any errors. Call the setUpSensor function directly after you have successfully connected to the IoT Hub:
 ```js
-setUpSensor( function (err, sensorTag) {
+setUpSensor(sensorId, function (err, sensorTag) {
     if (err) {
         console.error('Could not connect to sensor: ' + err.message);
     }
