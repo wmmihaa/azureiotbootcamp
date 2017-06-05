@@ -232,7 +232,7 @@ client.sendEvent(message, function(err){
 
 Deploy the solution to the Device. You should get your temperatures printed out every second on the screen. 
 <pre>
-<b>If the sensor doesn’t connect, you’ll need to push the power button again</b>
+<b>If the sensor doesn’t connect, you’ll need to push the power button on the sensor again</b>
 </pre>
 
 ### **WELL DONE!** 
