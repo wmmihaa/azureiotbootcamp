@@ -55,8 +55,10 @@ Azure Functions is about "Serverless computing" and can be used in many differen
 5. Select *JavaScript* as the Language and **ServiceBusQueueTrigger-JavaScript** as the template
 6. Set the **Name** to "sendMessageToDevice" 
 7. Set *Queue name* to **temperaturereadings**
-7. Create a new *Service Bus connection* by clicking **new** and use the connection string you copied after creating the Service Bus namespace. 
 8. Set *Access rights* to **Listen** and click the **Create** button.
+9. Add a *Service Bus connection* by clicking **new**. Select *Custom*, provide a name and set the connection string to the one you copied after creating the Service Bus namespace. 
+
+<img src="http://microservicebus.blob.core.windows.net/img/azurebootcamp_15.png"/>
 
 ### Write Azure Function
 With the *Function* created, it's time to write the actual code. Replace the existing function code with:
