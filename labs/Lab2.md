@@ -137,7 +137,7 @@ Add the follwoing code just after you successfully connected to the IoT Hub.
 ```js
 client.on('message', function (msg) {
     console.log('Received Command: WARNING');
-    console.log(JSON.stringify(msg));
+    console.log(String.fromCharCode.apply(null, msg.data));
 });
 ```
 
